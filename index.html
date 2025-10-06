@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="pl">
+<head>
+  <meta charset="UTF-8">
+  <title>YourSocial</title>
+  <link rel="stylesheet" href="style.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+  <link href="https://fonts.googleapis.com/css2?family=Montserrat&display=swap" rel="stylesheet">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+</head>
+<body>
+  <header>
+    <div class="logo">YourSocial</div>
+    <div class="search-bar">
+      <i class="fas fa-search"></i>
+      <input type="text" placeholder="       Wyszukaj">
+    </div>
+    <div class="icons">
+      <i class="fas fa-envelope"></i>
+      <i class="fas fa-user-circle"></i>
+    </div>
+  </header>
+
+  <main>
+    <div class="post">
+      <p class="post-text"><a style="font-weight:bolder; color: black; font-size: 30px;">SKANDAL! Nauczyciel pobił ucznia!</a>
+        <br>W jednej z mazowieckich szkół średnich doszło do szokującego incydentu, który wstrząsnął lokalną społecznością. Podczas lekcji wychowawczej nauczyciel miał użyć siły wobec jednego z uczniów, co zostało zarejestrowane przez świadków zdarzenia.</a></p>
+      <div class="post-image">
+        <img src="pilne.png" alt="Post Image">
+      </div>
+      <div class="post-actions">
+        <button><i class="fas fa-thumbs-up"></i> Polub to</button>
+        <button><i class="fas fa-comment-alt"></i> Skomentuj</button>
+        <button><i class="fas fa-share"></i> Udostępnij</button>
+      </div>
+    </div>
+  </main>
+  
+    <div class="blur-overlay" id="blurOverlay"></div>
+    <div class="share-message" id="shareMessage">
+    Udostępniłeś post na swoim profilu
+    </div>
+
+
+    <script>
+  const shareButton = document.querySelector('.post-actions button:last-child');
+  const shareMessage = document.getElementById('shareMessage');
+  const blurOverlay = document.getElementById('blurOverlay');
+
+  shareButton.addEventListener('click', () => {
+    blurOverlay.style.display = 'block';
+    shareMessage.style.display = 'block';
+
+    setTimeout(() => {
+      blurOverlay.style.display = 'none';
+      shareMessage.style.display = 'none';
+    }, 10000);
+  });
+</script>
+
+
+</body>
+</html>
