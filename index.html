@@ -31,31 +31,42 @@
       <div class="post-actions">
         <button><i class="fas fa-thumbs-up"></i> Polub to</button>
         <button><i class="fas fa-comment-alt"></i> Skomentuj</button>
-        <button><i class="fas fa-share"></i> Udostępnij</button>
+        <button onclick="shareButtonClick(this)"><i class="fas fa-share"></i> Udostępnij</button>
+        <button onclick="authorButtonClick(this)"><i class="fas fa-user"></i> Zobacz autora</button>
       </div>
+
+      <div class="post-author">
+        Autor: Jan Kowalski
     </div>
   </main>
   
-    <div class="blur-overlay" id="blurOverlay"></div>
-    <div class="share-message" id="shareMessage">
-    Udostępniłeś post na swoim profilu
-    </div>
+    <div id="overlay">
+  <div id="messageBox">
+    ✅ Udostępniłeś post na swoim profilu
+  </div>
+</div>
 
 
     <script>
-  const shareButton = document.querySelector('.post-actions button:last-child');
-  const shareMessage = document.getElementById('shareMessage');
-  const blurOverlay = document.getElementById('blurOverlay');
-
-  shareButton.addEventListener('click', () => {
-    blurOverlay.style.display = 'block';
-    shareMessage.style.display = 'block';
+  function shareButtonClick() {
+    const overlay = document.getElementById('overlay');
+    overlay.style.display = 'flex';
 
     setTimeout(() => {
-      blurOverlay.style.display = 'none';
-      shareMessage.style.display = 'none';
-    }, 10000);
-  });
+      overlay.style.display = 'none';
+    }, 5000);
+  }
+
+
+function authorButtonClick(button) {
+  const post = button.closest('.post');
+  const authorInfo = post.querySelector('.post-author');
+
+  if (authorInfo) {
+    authorInfo.style.display = authorInfo.style.display === 'none' ? 'block' : 'none';
+  }
+}
+
 </script>
 
 
