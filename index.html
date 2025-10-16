@@ -1,74 +1,219 @@
 <!DOCTYPE html>
-<html lang="pl">
+<html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <title>YourSocial</title>
-  <link rel="stylesheet" href="style.css">
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
-  <link href="https://fonts.googleapis.com/css2?family=Montserrat&display=swap" rel="stylesheet">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="style.css">
 </head>
 <body>
-  <header>
-    <div class="logo">YourSocial</div>
-    <div class="search-bar">
-      <i class="fas fa-search"></i>
-      <input type="text" placeholder="       Wyszukaj">
-    </div>
-    <div class="icons">
-      <i class="fas fa-envelope"></i>
-      <i class="fas fa-user-circle"></i>
-    </div>
-  </header>
 
-  <main>
-    <div class="post">
-      <p class="post-text"><a style="font-weight:bolder; color: black; font-size: 30px;">SKANDAL! Nauczyciel pobił ucznia!</a>
-        <br>W jednej z mazowieckich szkół średnich doszło do szokującego incydentu, który wstrząsnął lokalną społecznością. Podczas lekcji wychowawczej nauczyciel miał użyć siły wobec jednego z uczniów, co zostało zarejestrowane przez świadków zdarzenia.</a></p>
-      <div class="post-image">
-        <img src="pilne.png" alt="Post Image">
-      </div>
-      <div class="post-actions">
-        <button><i class="fas fa-thumbs-up"></i> Polub to</button>
-        <button><i class="fas fa-comment-alt"></i> Skomentuj</button>
-        <button onclick="shareButtonClick(this)"><i class="fas fa-share"></i> Udostępnij</button>
-        <button onclick="authorButtonClick(this)"><i class="fas fa-user"></i> Zobacz autora</button>
-      </div>
+    <div class="container">
+        <header id="main-header">
+            Weryfikacja Wirusa Plotki
+        </header>
 
-      <div class="post-author">
-        Autor: Jan Kowalski
+        <div id="post-view">
+            
+            <div class="post-card">
+                <div class="post-header">
+                    <img src="images.jpg" alt="Avatar" class="avatar">
+                    <div class="user-info">
+                        <a href="#" class="author-name" id="author-name-link">PrawdziwySokZInformacji69</a>
+                        <span class="handle">@InfoSok69</span>
+                    </div>
+                </div>
+
+                <div class="post-content">
+                    <p>
+                        <strong>🚨 PILNE: Uczeń pobity tak, że lekarze walczą o życie! </strong>
+                        Udostępniajcie, by cała szkoła widziała!
+                    </p>
+                </div>
+                
+                <div class="post-media">
+                    <img src="pilne.png" 
+                            alt="Sensacyjne zdjęcie z miejsca zdarzenia" 
+                            class="post-image">
+                </div>
+
+                <div class="hashtags">#Pobicie #Szkoła #Szok #PILNE</div>
+
+                <div class="post-stats">
+                    <span class="stat-item"><span class="stat-number" id="shares-count">1.2K</span> Udostępnień</span>
+                    <span class="stat-item"><span class="stat-number">500</span> Komentarzy</span>
+                    <span class="stat-item"><span class="stat-number">3.4K</span> Polubień</span>
+                </div>
+
+                <div class="post-actions">
+                    <button class="action-button">💬</button>
+                    <button class="action-button">🔁</button>
+                    <button id="share-button" class="share-btn">Udostępnij</button>
+                    <button class="action-button">❤️</button>
+                </div>
+            </div>
+            
+            <div class="post-card" style="opacity: 0.8; padding-bottom: 25px;">
+                <div class="post-header">
+                    <img src="pobrane.png" alt="Avatar" class="avatar">
+                    <div class="user-info">
+                        <span class="author-name" style="cursor: default;">PamiętnikPogody</span>
+                        <span class="handle">@PrognozaDnia</span>
+                    </div>
+                </div>
+                <div class="post-content">
+                    <p>Słońce dzisiaj świeci tak mocno, że aż zapomniałem, że jutro ma padać. 😅 Przygotujcie parasole na czwartek!</p>
+                </div>
+                <div class="hashtags">#Pogoda #Polska #Słońce</div>
+            </div>
+
+            <div class="post-card" style="opacity: 0.7;">
+                <div class="post-header">
+                    <img src="pobrane.jpg" alt="Avatar" class="avatar">
+                    <div class="user-info">
+                        <span class="author-name" style="cursor: default;">FoodieMaster</span>
+                        <span class="handle">@CoDziśJesz</span>
+                    </div>
+                </div>
+                <div class="post-content">
+                    <p>Ktoś poleci dobry przepis na szybkie wege curry? Mam 20 minut i głód życia. 🌶️</p>
+                </div>
+            </div>
+        </div>
+
+        <div id="profile-view" style="display: none;">
+            <div class="profile-header">
+                <img src="images.jpg" alt="Avatar" class="profile-avatar">
+                <h1 class="profile-name">PrawdziwySokZInformacji69</h1>
+                <p class="profile-handle">@InfoSok69</p>
+            </div>
+
+            <div class="profile-description">
+                <p>Jestem tu dla memów i darmowych V-bucksów. Nie wierzyć mi, bo i tak kłamię XD. W 100% zmyślone wiadomości.</p>
+            </div>
+
+            <h2>Ostatnie Posty (Wzór)</h2>
+            <div class="fake-post">
+                <p>⚠️ **Ostrzeżenie:** Wygraj iPhone'a – udostępnij ten post 100 razy i napisz 'Wchodzę!' (To SPAM)</p>
+            </div>
+            <div class="fake-post">
+                <p>Mój kot jest teraz prezesem banku. Czekamy na dewaluację kartonów.</p>
+            </div>
+            <div class="fake-post">
+                <p>NASA ukrywa prawdę o kurczakach. Otwórz oczy!</p>
+            </div>
+
+            <div class="conclusion" id="final-conclusion">
+                </div>
+
+            <button onclick="resetApp()" style="margin-top: 20px; background-color: var(--color-accent-blue); color: white; border: none; padding: 10px 20px; border-radius: 9999px; cursor: pointer;">
+                Wróć do Feed
+            </button>
+        </div>
     </div>
-  </main>
-  
-    <div id="overlay">
-  <div id="messageBox">
-    ✅ Udostępniłeś post na swoim profilu
-  </div>
-</div>
 
+    <div id="share-modal" class="modal">
+        <div class="modal-content">
+            <h3 id="modal-title"></h3>
+            <p id="modal-message"></p>
+            <button onclick="closeModal()">OK, Rozumiem</button>
+        </div>
+    </div>
 
     <script>
-  function shareButtonClick() {
-    const overlay = document.getElementById('overlay');
-    overlay.style.display = 'flex';
+        // ------------------------------------
+        // 4. MECHANIZMY INTERAKCJI (JAVASCRIPT)
+        // ------------------------------------
 
-    setTimeout(() => {
-      overlay.style.display = 'none';
-    }, 5000);
-  }
+        const SHARE_BUTTON = document.getElementById('share-button');
+        const AUTHOR_LINK = document.getElementById('author-name-link');
+        const POST_VIEW = document.getElementById('post-view');
+        const PROFILE_VIEW = document.getElementById('profile-view');
+        const MODAL = document.getElementById('share-modal');
+        const MODAL_TITLE = document.getElementById('modal-title');
+        const MODAL_MESSAGE = document.getElementById('modal-message');
+        const SHARES_COUNT = document.getElementById('shares-count');
+        const FINAL_CONCLUSION = document.getElementById('final-conclusion');
+
+        let hasShared = localStorage.getItem('hasShared') === 'true';
+        let hasVerified = localStorage.getItem('hasVerified') === 'true';
+
+        let shareCounter = 1200;
+
+        // --- Funkcje Przełączania Widoków ---
+        function showProfileView(event) {
+            if (event) event.preventDefault();
+            
+            hasVerified = true;
+            localStorage.setItem('hasVerified', 'true');
+
+            POST_VIEW.style.display = 'none';
+            PROFILE_VIEW.style.display = 'block'; 
+            
+            if (hasShared) {
+                FINAL_CONCLUSION.classList.remove('verified');
+                FINAL_CONCLUSION.textContent = "💡 Późna Weryfikacja! Udostępniłeś plotkę, ale profil ujawnił prawdę. Pamiętaj: Weryfikuj, ZANIM klikniesz Udostępnij. Jeśli udostępnisz ponownie, tylko powiększysz problem!";
+            } else {
+                FINAL_CONCLUSION.classList.add('verified');
+                FINAL_CONCLUSION.textContent = "✅ Brawo! Weryfikacja ZAWSZE na pierwszym miejscu. Nie zostałeś wciągnięty w dezinformację.";
+            }
+            window.scrollTo(0, 0);
+        }
+
+        function showPostView() {
+            PROFILE_VIEW.style.display = 'none';
+            POST_VIEW.style.display = 'block';
+            window.scrollTo(0, 0);
+        }
+        // ------------------------------------
+
+        function initializeState() {
+            shareCounter = hasShared ? 1201 : 1200;
+            SHARES_COUNT.textContent = shareCounter >= 1000 ? (shareCounter / 1000).toFixed(1) + 'K' : shareCounter;
+            
+            SHARE_BUTTON.disabled = false;
+            SHARE_BUTTON.textContent = 'Udostępnij';
+            
+            showPostView();
+        }
+
+        // SCENARIUSZ A: Wstępne Wywołanie Reakcji (Impuls)
+        SHARE_BUTTON.addEventListener('click', () => {
+            shareCounter += 1;
+            SHARES_COUNT.textContent = (shareCounter / 1000).toFixed(1) + 'K';
+
+            if (!hasShared) {
+                hasShared = true;
+                localStorage.setItem('hasShared', 'true');
+
+                MODAL_TITLE.textContent = "🛑 Udostępniono po raz pierwszy!";
+                MODAL_MESSAGE.innerHTML = "Wpłynąłeś na opinię tysięcy ludzi. **Czy na pewno wiesz, kto to napisał?** Następne kliknięcie pogłębi dezinformację.";
+            } else {
+                MODAL_TITLE.textContent = "⚠️ Udostępniono Ponownie!";
+                MODAL_MESSAGE.innerHTML = "Post już jest udostępniony. Właśnie przyczyniłeś się do **dalszego rozprzestrzeniania plotki**. Sprawdź, zanim zrobisz to kolejny raz!";
+            }
+            
+            MODAL.style.display = 'flex';
+        });
+
+        // SCENARIUSZ B: Sprawdzenie Autora (Weryfikacja)
+        AUTHOR_LINK.addEventListener('click', showProfileView);
 
 
-function authorButtonClick(button) {
-  const post = button.closest('.post');
-  const authorInfo = post.querySelector('.post-author');
+        function closeModal() {
+            MODAL.style.display = 'none';
+        }
 
-  if (authorInfo) {
-    authorInfo.style.display = authorInfo.style.display === 'none' ? 'block' : 'none';
-  }
-}
+        function resetApp() {
+            localStorage.clear();
+            hasShared = false;
+            hasVerified = false;
+            shareCounter = 1200;
+            initializeState();
+        }
 
-</script>
-
-
+        document.addEventListener('DOMContentLoaded', initializeState);
+    </script>
 </body>
+</html>
 </html>
